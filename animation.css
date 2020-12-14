@@ -1,0 +1,17 @@
+/*Divs*/
+
+#road {
+    width: 50px;
+    height: fit-content;
+    background-image: linear-gradient(rgb(223, 161, 202), rgb(58, 50, 95));
+    align-content: center;
+    position: relative;
+    animation: roadStretch 5s infinite;
+}
+
+/*Animation keyframes*/
+
+@keyframes roadStretch{
+    from {height: 0%;}
+    to {height: 100%;}
+}
