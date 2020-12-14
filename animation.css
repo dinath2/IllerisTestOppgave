@@ -11,8 +11,10 @@
     height: 75px;
     background-image: url(semiTruck.png);
     background-size: cover;
+    position: absolute;
     animation: movingSemi 8s;
 }
+
 #road {
     width: 50px;
     max-height: 1200px;
