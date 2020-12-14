@@ -6,7 +6,7 @@
     background-image: linear-gradient(rgb(223, 161, 202), rgb(58, 50, 95));
     align-content: center;
     position: relative;
-    animation: roadStretch 5s infinite;
+    animation: roadStretch 5s;
 }
 
 /*Animation keyframes*/
