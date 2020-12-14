@@ -11,13 +11,14 @@
     background-image: url(semiTruck.png);
     background-size: cover;
     position: absolute;
-    animation: movingSemi 8s;
+    animation: movingSemi 6s;
+    animation-delay: 1s;
 }
 
 #road {
     width: 50px;
     height: 100%;
-    background-image: linear-gradient(red, yellow, blue);
+    background-image: linear-gradient(rgb(204, 152, 206), rgb(48, 49, 116));
     position: absolute;
     animation: roadStretch 5s;
 }
@@ -25,7 +26,7 @@
 /*Animation keyframes*/
 @keyframes movingSemi {
     from {top: 10px;}
-    to {top: 1100px;}
+    to {top: 90%;}
 }
 
 @keyframes roadStretch {
