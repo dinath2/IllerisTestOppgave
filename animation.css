@@ -1,20 +1,20 @@
 /*Divs*/
 #container {
     width: 150px;
-    height: fit-content;
+    height: 1200px;
     align-content: center;
     position: relative;
 }
 
 #truck {
-    width: 35px;
-    height: 40px;
+    width: 60px;
+    height: 75px;
     background-image: url(semiTruck.png);
     animation: movingSemi 8s;
 }
 #road {
-    width: 30px;
-    max-height: 500px;
+    width: 50px;
+    max-height: 1200px;
     background-image: linear-gradient(rgb(223, 161, 202), rgb(58, 50, 95));
     position: absolute;
     animation: roadStretch 5s;
@@ -23,7 +23,7 @@
 /*Animation keyframes*/
 @keyframes movingSemi {
     from {top: 10px;}
-    to {top: 500px;}
+    to {top: 1100px;}
 }
 
 @keyframes roadStretch {
