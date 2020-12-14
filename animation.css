@@ -2,7 +2,7 @@
 
 #road {
     width: 50px;
-    height: fit-content;
+    max-height: 500px;
     background-image: linear-gradient(rgb(223, 161, 202), rgb(58, 50, 95));
     align-content: center;
     position: relative;
@@ -11,7 +11,7 @@
 
 /*Animation keyframes*/
 
-@keyframes roadStretch{
+@keyframes roadStretch {
     from {height: 0%;}
     to {height: 100%;}
 }
