@@ -1,26 +1,32 @@
 /*Divs*/
+#container {
+    width: 150px;
+    height: fit-content;
+    align-content: center;
+    position: relative;
+}
+
 #truck {
     width: 35px;
     height: 40px;
     background-image: url(semiTruck.png);
+    animation: movingSemi 8s;
 }
 #road {
     width: 30px;
     max-height: 500px;
     background-image: linear-gradient(rgb(223, 161, 202), rgb(58, 50, 95));
-    align-content: center;
-    position: relative;
+    position: absolute;
     animation: roadStretch 5s;
 }
 
 /*Animation keyframes*/
-
-@keyframes roadStretch {
-    from {transform: translateY(-100%);}
-    to {transform: translateY(0);}
+@keyframes movingSemi {
+    from {top: 10px;}
+    to {top: 500px;}
 }
 
-@keyframes movingSemi {
-    from {top: 25px;}
-    to {top: 500px;}
+@keyframes roadStretch {
+    from {max-height: 0%;}
+    to {max-height: 100%;}
 }
