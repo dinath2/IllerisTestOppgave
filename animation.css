@@ -10,16 +10,14 @@
     height: 75px;
     background-image: url(semiTruck.png);
     background-size: cover;
-    position: absolute;
     animation: movingSemi 6s;
     animation-delay: 1s;
 }
 
 #road {
-    width: 50px;
+    width: 35px;
     height: 100%;
     background-image: linear-gradient(rgb(204, 152, 206), rgb(48, 49, 116));
-    position: absolute;
     animation: roadStretch 5s;
 }
 
