@@ -1,9 +1,8 @@
 /*Divs*/
 #container {
     width: 150px;
-    height: 1200px;
+    height: 100%;
     align-content: center;
-    position: relative;
 }
 
 #truck {
@@ -17,8 +16,8 @@
 
 #road {
     width: 50px;
-    max-height: 1200px;
-    background-image: linear-gradient(rgb(223, 161, 202), rgb(58, 50, 95));
+    height: 100%;
+    background-image: linear-gradient(red, yellow, blue);
     position: absolute;
     animation: roadStretch 5s;
 }
@@ -30,6 +29,6 @@
 }
 
 @keyframes roadStretch {
-    from {max-height: 0%;}
-    to {max-height: 100%;}
+    from {height: 0%;}
+    to {height: 100%;}
 }
