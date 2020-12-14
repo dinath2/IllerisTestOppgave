@@ -12,6 +12,6 @@
 /*Animation keyframes*/
 
 @keyframes roadStretch {
-    from {max-height: 0%;}
-    to {max-height: 100%;}
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0);}
 }
