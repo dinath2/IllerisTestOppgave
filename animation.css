@@ -23,6 +23,7 @@
     z-index: 1;
     background-image: linear-gradient(rgb(204, 152, 206), rgb(48, 49, 116));
     position: absolute;
+    left: 50%;
     animation-fill-mode: forwards;
     animation: roadStretch 5s;
 }
