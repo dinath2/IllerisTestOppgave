@@ -8,13 +8,21 @@
 </head>
 <body>
     <div class="flex-container">
-        <div id="truck"></div>
+        <div id="truck" onload="moveObject()"></div>
         <div id="road"></div>
     </div>
 <script>
+    function moveObject() {
+        var truck = document.getElementById("truck");
+        var position = 0;
+        var interval = setInterval(frame, 10);
 
-    function moveObjects() {
-
+        function frame() {
+        if (position == 1200) clearInterval(interval);
+        else {
+        position++; 
+        truck.style.top = pos + "px"; }
+        }
     }
 </script>
 </body>
