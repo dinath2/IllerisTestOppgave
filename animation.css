@@ -5,7 +5,6 @@
     position: relative;
     display: flex;
     align-items: center;
-    top: 0%;
 }
 
 #truck {
@@ -13,24 +12,24 @@
     height: 75px;
     background-image: url(semiTruck.png);
     background-size: cover;
-    position: absolute;
+    position: relative;
     animation-fill-mode: forwards;
     animation: movingSemi 6s;
     animation-delay: 1s;
 }
 
 #road {
-    width: 40px;
+    width: 50px;
     height: 100%;
     background-image: linear-gradient(rgb(204, 152, 206), rgb(48, 49, 116));
-    position: absolute;
+    position: relative;
     animation-fill-mode: forwards;
     animation: roadStretch 5s;
 }
 
 /*Animation keyframes*/
 @keyframes movingSemi {
-    from {top: 0%;}
+    from {top: 10px;}
     to {top: 90%;}
 }
 
