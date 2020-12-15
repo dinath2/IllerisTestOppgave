@@ -12,6 +12,7 @@
     background-image: url(semiTruck.png); /*this one needs to be replaced before implementation, but it's added to the file*/
     background-size: cover;
     position: absolute; /*this should allow me to position things as i want, but it keeps competing with something and i'm not sure what*/
+    right: 15%;
     animation-fill-mode: forwards; /*this one should technically allow the div to retain the values at the end of the animation, but only road works???*/
     animation: movingSemi 6s; /*Length of the animation itself*/
     animation-delay: 1s; /*delay was needed to let the road be drawn up. is this why the animation keeps bouncing back?*/
@@ -23,7 +24,7 @@
     z-index: 1;
     background-image: linear-gradient(rgb(204, 152, 206), rgb(48, 49, 116));
     position: absolute;
-    left: 50%;
+    right: 15%;
     animation-fill-mode: forwards;
     animation: roadStretch 5s;
 }
