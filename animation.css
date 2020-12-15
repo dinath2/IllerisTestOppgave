@@ -14,7 +14,8 @@
     z-index: 2; /*this one moves things forwards or backwards. Higher number goes ontop*/
     background-image: url(semiTruck.png); /*this one needs to be replaced before implementation, but it's added to the file*/
     background-size: cover;
-    /*animation-fill-mode:
+    /*position: absolute;
+    animation-fill-mode:
     animation: movingSemi 6s;*/
 }
 
@@ -24,7 +25,8 @@
     height: 100%;
     z-index: 1;
     background-image: linear-gradient(rgb(204, 152, 206), rgb(48, 49, 116));
-    /*animation-fill-mode: forwards;
+    /*position: absolute;
+    animation-fill-mode: forwards;
     animation: roadStretch 5s;*/
 }
 
