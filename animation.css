@@ -1,28 +1,29 @@
 /*Divs*/
-#container {
-    width: 150px;
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
     height: 100%;
-    align-items: center; /*I don't think this one is working due to 'position', gotta ask Terje or someone else*/
 }
 
 #truck {
+    order: 1;
     width: 75px;
     height: 75px;
     z-index: 2; /*this one moves things forwards or backwards. Higher number goes ontop*/
     background-image: url(semiTruck.png); /*this one needs to be replaced before implementation, but it's added to the file*/
     background-size: cover;
-    position: absolute; /*i'm sure this is what's messing things up, but i need help for this*/
     animation-fill-mode: forwards; /*this one should technically allow the div to retain the values at the end of the animation, but only road works???*/
     animation: movingSemi 6s; /*Length of the animation itself*/
-    animation-delay: 1s; /*delay was needed to let the road be drawn up. is this why the animation keeps bouncing back?*/
+    top: 90%;
 }
 
 #road {
+    order: 2;
     width: 40px;
     height: 100%;
     z-index: 1;
     background-image: linear-gradient(rgb(204, 152, 206), rgb(48, 49, 116));
-    position: absolute;
     animation-fill-mode: forwards;
     animation: roadStretch 5s;
 }
