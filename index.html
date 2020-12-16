@@ -7,26 +7,42 @@
     <title>test animation</title>
 </head>
 <body>
-    <div class="flex-container">
-        <div id="truck" onload="moveObject()"></div>
-        <div id="road" onload=""></div>
-    </div>
-<script>
-    function moveObject() {
-        var truck = document.getElementById("truck");
-        var position = 0;
-        var interval = setInterval(frame, 10);
 
-        function frame() {
-        if (position == 1200) clearInterval(interval);
-        else {
-        position++; 
-        truck.style.top = pos + "px"; }
-        }
+    <div id="container">
+        <div id="truck"></div>
+        <div id="road" onscroll="MoveElement()"></div>
+    </div>
+
+<script>
+    var elem = document.getElementById("road");
+    var pos = 0;
+    var id = setInterval(frame, 5);
+    let position = window.pageYOffset; // get current page-Y-offset
+
+    function MoveElement() {
+        let position = window.pageYOffset; // get current page-Y-offset
+        window.addEventListener('scroll', () => { // Listen for scroll
+        let scroll = window.pageYOffset; // get page-Y-offset value with every scroll
+        //If the scroll is greater than position, user has scrolled down, else they scrolled up
+        scroll > position ? MoveElementDown() : MoveElementUp();
+        //Set the position equal to scroll
+        position = scroll;});
     }
 
-    function expandRoad() {
-        
+    function MoveElementDown() {
+        if (pos == 500) clearInterval(id);
+        else {
+            pos++;
+            elem.style.top = pos + 'px';
+            }                                       
+    }
+
+    function MoveElementUp() {
+        if (pos == 500) clearInterval(id);
+        else {
+            pos++;
+            elem.style.bottom = pos + 'px';
+            }                                       
     }
 </script>
 </body>
