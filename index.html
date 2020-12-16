@@ -113,5 +113,45 @@ document.getElementById("myLine").setAttribute("y1", total-20+"%");
 </body>
 </html>
 
+<div><svg viewbox="0 0 200 200">
+    <line id="myLine" x1="50%" y1="0%" x2="50%" y2="10%"style="stroke:rgb(255,0,0);stroke-width:10"/>
 
+</svg></div>
+<script>
+var min = 10;
+var max = 60;
+var lineStart = 35;
+var halfDrawBoard = 40;
+var total = 50;
+var increment = 2;
+var lineY2 = 0;
+    document.onscroll = function(){ 
+        var pos = getVerticalScrollPercentage(document.body)
+if(pos <= halfDrawBoard){
+        document.getElementById("myLine").setAttribute("y1", 0+"%");
+}
+if(pos >lineStart) {
+drawLine(pos);
+}
+        // console.log("pos: "+pos);
+                     }
+                     function getVerticalScrollPercentage(elm){
+                         var p = elm.parentNode,
+                         pos = (elm.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight ) * 100
+                         return pos
+                     }
+function drawLine(pos) {
+    var amountIncrements = pos-min;
+    var total = increment * amountIncrements;
+document.getElementById("myLine").setAttribute("y2", total+"%");
+if(pos>halfDrawBoard){
+var currentY1 = document.getElementById("myLine").getAttribute("y1");
+console.log("Current y1: " + currentY1);
+document.getElementById("myLine").setAttribute("y1", currentY1);
+}}
+if(pos 15) tegn y2 til pos20
+if(pos 40) tegn y1 ned til bottom
+
+</script>
+</body>
 -->
