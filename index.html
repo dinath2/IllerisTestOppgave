@@ -41,6 +41,14 @@
             }                                       
     }
 </script>
+<script>
+    var move = 0;
+    window.addEventListener("scroll", myScript);
+    function myScript(){
+       document.getElementById("blue-rectangle").setAttribute("y", move);
+       move++;
+   } 
+</script>
 </body>
 </html>
 
