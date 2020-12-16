@@ -44,7 +44,7 @@
 <script>
     var move = 0;
     window.addEventListener("scroll", myScript);
-    
+
     function myScript(){
         document.getElementById("blue-rectangle").setAttribute("y", move);
         move++;
@@ -68,4 +68,65 @@
                move++;
            } 
         </script>
-</body> -->
+</body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Reprehenderit veritatis, fugit expedita nobis alias sapiente reiciendis consequatur minima,
+          obcaecati culpa saepe! Cumque, libero? Aliquam repellat debitis iste,
+           doloremque maxime eos voluptate sint ab esse cumque,
+            dolorum quisquam natus libero praesentium consequuntur rem! Nisi,
+             recusandae rem? Architecto obcaecati totam tempora quos beatae esse sapiente nobis possimus illo eius?
+              Sapiente blanditiis dolores amet vitae adipisci dolorum repellendus neque nisi, suscipit at tempora commodi
+               aliquid doloribus voluptatem ex quos enim architecto laboriosam magni cumque. Molestias provident accusamus error
+                temporibus laudantium recusandae non accusantium suscipit sed? Repellat autem nesciunt consequatur culpa eum
+                 suscipit eveniet!</div>
+<div><svg viewbox="0 0 200 200">
+    <line id="myLine" x1="50%" y1="0%" x2="50%" y2="10%"style="stroke:rgb(255,0,0);stroke-width:10"/>
+
+</svg></div>
+<script>
+var min = 60;
+var max = 100;
+var total = 40;
+var increment = 2.5;
+var lineY2 = 0;
+    document.onscroll = function(){ 
+        var pos = getVerticalScrollPercentage(document.body)
+if(pos <= 60){
+        document.getElementById("myLine").setAttribute("y1", 0+"%");
+}
+if(pos >60) {
+drawLine(pos);
+}
+        // console.log("pos: "+pos);
+                     }
+                     function getVerticalScrollPercentage(elm){
+                         var p = elm.parentNode,
+                         pos = (elm.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight ) * 100
+                         return pos
+                     }
+function drawLine(pos) {
+    var amountIncrements = pos-min;
+    var total = increment * amountIncrements;
+document.getElementById("myLine").setAttribute("y2", total+"%");
+if(pos>80){
+
+}
+document.getElementById("myLine").setAttribute("y1", total-20+"%");
+}
+
+
+</script>
+</body>
+</html>
+
+
+-->
