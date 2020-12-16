@@ -17,17 +17,13 @@
     var elem = document.getElementById("road");
     var pos = 0;
     var id = setInterval(frame, 5);
-    let position = window.pageYOffset; // get current page-Y-offset
-
-    function MoveElement() {
-        let position = window.pageYOffset; // get current page-Y-offset
-        window.addEventListener('scroll', () => { // Listen for scroll
-        let scroll = window.pageYOffset; // get page-Y-offset value with every scroll
-        //If the scroll is greater than position, user has scrolled down, else they scrolled up
-        scroll > position ? MoveElementDown() : MoveElementUp();
-        //Set the position equal to scroll
-        position = scroll;});
-    }
+    let position = window.pageYOffset; 
+    window.addEventListener('scroll', () => { // Listen for scroll
+    let scroll = window.pageYOffset; // get page-Y-offset value with every scroll
+    //If the scroll is greater than position, user has scrolled down, else they scrolled up
+    scroll > position ? MoveElementDown() : MoveElementUp();
+    //Set the position equal to scroll
+    position = scroll;});
 
     function MoveElementDown() {
         if (pos == 500) clearInterval(id);
