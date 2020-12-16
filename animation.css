@@ -17,3 +17,17 @@
     z-index: 1;
     background-image: linear-gradient(rgb(204, 152, 206), rgb(48, 49, 116));
 }
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 5s linear alternate infinite;
+  }
+  
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 822;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
