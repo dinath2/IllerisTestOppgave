@@ -83,3 +83,49 @@
     </script>
 </body>
 </html>
+
+<!-- 
+    
+    <script>
+    var min = 10;
+    var max = 60;
+    var lineStart = 40;
+    var halfDrawBoard = 40;
+    var total = 50;
+var distance = 10;
+    var increment = 2;
+    var lineY2 = 0;
+var linearY1 = 0;
+var linearY2 = 0;
+var test = 5;
+        document.onscroll = function(){ 
+            var pos = getVerticalScrollPercentage(document.body); 
+drawLine(pos);
+    }
+
+                         
+    function drawLine(pos) {
+if(pos >=10){
+document.getElementById("myLine").setAttribute("y1", linearY1+"%");
+document.getElementById("myLine").setAttribute("y2", linearY2+"%");
+linearY2 = (parseFloat(pos)-10)*2;
+}
+if(pos > 45){
+linearY1 = (parseFloat(pos)-45)*6.5;
+test = -5;
+}
+
+test++;
+    }
+
+//Posisjooon==========================================================
+                         //Funksjon for å finne skjerm posisjon i %
+                         function getVerticalScrollPercentage(elm){
+                             var p = elm.parentNode,
+                             pos = (elm.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight ) * 100
+                             return parseInt(pos);
+                         }
+
+    
+    
+    </script> -->
