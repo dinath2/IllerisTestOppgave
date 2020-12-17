@@ -42,6 +42,8 @@
         var currentY1 = document.getElementById("myLine").getAttribute("y1");
         var distance = currentY2-currentY1;
         var pixelsBehind = 5;
+        document.getElementById("myLine").setAttribute("y1", "0"+"%");
+        console.log("CY2: "+currentY2 + " CY2-pixelBeh: "+ (currentY2-pixelsBehind))
 
         //Posisjon 35 => y2 tegner seg nedover.
         if (pos > 34 && pos < 61){
@@ -49,7 +51,8 @@
         }
         //posisjon 45 => y1 følger etter y2.
         if (pos > 44 && pos < 50){
-            document.getElementById("myLine").setAttribute("y1", currentY2-pixelsBehind);
+            console.log("Move y1")
+            document.getElementById("myLine").setAttribute("y1", (currentY2-pixelsBehind)+"%");
         }
         //posisjon 60 => y2 stoppe.
         if(pos > 49 && pos < 61){
@@ -74,12 +77,7 @@
         }
         
         //Y1 fortsetter til den er på samme posisjon som y2.
-        
-       
-        if(pos>halfDrawBoard){
-        console.log("Current y1: " + currentY1);
-        document.getElementById("myLine").setAttribute("stroke:rbg", "0,255,0");
-        }}
+    }
     
     
     </script>
