@@ -1,0 +1,44 @@
+<div id="myDiv">
+    <svg viewbox="0 0 200 200">
+        <line id="myLine" 
+                x1="50%" 
+                y1="0%" 
+                x2="50%" 
+                y2="10%"
+                style="stroke:rgb(220,220,220);stroke-width:10"
+        />    
+    </svg>
+</div>    
+<script>
+    let animDiv = document.getElementById('myDiv');
+    const line = document.getElementById("myLine");
+    var linearY1 = 0;
+    var linearY2 = 0;
+
+    var min = 10;
+    var max = 60;
+    var lineStart = 40;
+    var halfDrawBoard = 40;
+    var total = 50;
+    var distance = 10;
+    var increment = 2;
+    var lineY2 = 0;
+    var test = 5;
+    document.onscroll = function() {
+    
+        let rect = animDiv.getBoundingClientRect();
+        let startPercentage = rect.top / window.innerHeight;
+        let endPercentage = rect.bottom / window.innerHeight;
+
+        linearY1 = 150 - Math.floor(140 * endPercentage);
+        linearY2 = 50 - Math.floor(100 * startPercentage);
+        updateLine();
+    }
+
+    function updateLine() {
+        line.setAttribute("y1", linearY1 + "%");
+        line.setAttribute("y2", linearY2 + "%");
+    }
+
+  
+</script>
