@@ -1,13 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<body>
 <div>
-    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, officiis perferendis? Ex aliquid, ea, culpa illum doloribus rem exercitationem alias deleniti vero earum assumenda. Minus ducimus impedit necessitatibus laboriosam repellendus.</div>
-    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, officiis perferendis? Ex aliquid, ea, culpa illum doloribus rem exercitationem alias deleniti vero earum assumenda. Minus ducimus impedit necessitatibus laboriosam repellendus.</div>
-    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, officiis perferendis? Ex aliquid, ea, culpa illum doloribus rem exercitationem alias deleniti vero earum assumenda. Minus ducimus impedit necessitatibus laboriosam repellendus.</div>
-    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, officiis perferendis? Ex aliquid, ea, culpa illum doloribus rem exercitationem alias deleniti vero earum assumenda. Minus ducimus impedit necessitatibus laboriosam repellendus.</div>
     <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore quisquam eos ratione officiis amet, quos doloribus asperiores vel a ipsam saepe, voluptatem dicta facilis maxime iusto enim eum, optio explicabo soluta corrupti accusantium alias
         voluptas cupiditate. Qui illum sint consequuntur! Corrupti saepe vel incidunt rem nulla repudiandae quam architecto culpa aliquam natus dicta eius dolore fuga, magni ipsam aperiam odit. Sint, illum iste. Blanditiis quis, voluptatum fuga fugiat
         consequatur molestias mollitia voluptatem autem modi praesentium rem nobis perferendis. Fuga ea eveniet similique repellendus consectetur est eum rem corrupti, nobis, magni cum. Fugit, nemo quos distinctio sint placeat repellat rerum fuga quod
@@ -102,6 +101,7 @@
         var increment = 2;
         var lineY2 = 0;
         var test = 5;
+        
         document.onscroll = function() {
             //var pos = getVerticalScrollPercentage(document.body);
             let rect = animDiv.getBoundingClientRect();
@@ -116,8 +116,8 @@
                 end = ${endPercentage}<br/>
                 `;
 
-            linearY1 = 110 - Math.floor(140 * endPercentage);
-            linearY2 = 110 - Math.floor(140 * startPercentage);
+            linearY1 = 110 - Math.floor(100 * endPercentage);
+            linearY2 = 50 - Math.floor(200 * startPercentage);
             updateLine();
         }
 
@@ -125,3 +125,6 @@
             line.setAttribute("y1", linearY1 + "%");
             line.setAttribute("y2", linearY2 + "%");
         }
+    </script>
+</body>
+</html>
