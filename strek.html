@@ -39,7 +39,7 @@
         var amountIncrements = pos-min;
         var total = increment * amountIncrements;
         var currentY2 = parseFloat(document.getElementById("myLine").getAttribute("y2"));
-        var currentY1 = document.getElementById("myLine").getAttribute("y1");
+        var currentY1 = parseFloat(document.getElementById("myLine").getAttribute("y1"));
         var distance = currentY2-currentY1;
         var pixelsBehind = 5;
         document.getElementById("myLine").setAttribute("y1", "0"+"%");
