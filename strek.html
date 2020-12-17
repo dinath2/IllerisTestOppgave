@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <div><svg viewbox="0 0 200 200">
+        <line id="myLine" x1="50%" y1="0%" x2="50%" y2="10%"style="stroke:rgb(255,0,0);stroke-width:10"/>
+    
+    </svg></div>
+    <script>
+    var min = 10;
+    var max = 60;
+    var lineStart = 35;
+    var halfDrawBoard = 40;
+    var total = 50;
+    var increment = 2;
+    var lineY2 = 0;
+        document.onscroll = function(){ 
+            var pos = getVerticalScrollPercentage(document.body)
+    if(pos <= halfDrawBoard){
+            document.getElementById("myLine").setAttribute("y1", 0+"%");
+    }
+    if(pos >lineStart) {
+    drawLine(pos);
+    }
+            // console.log("pos: "+pos);
+                         }
+                         //Funksjon for å finne skjerm posisjon i %
+                         function getVerticalScrollPercentage(elm){
+                             var p = elm.parentNode,
+                             pos = (elm.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight ) * 100
+                             return pos
+                         }
+
+                         
+    function drawLine(pos) {
+        var amountIncrements = pos-min;
+        var total = increment * amountIncrements;
+        var currentY2 = document.getElementById("myLine").getAttribute("y2");
+        var currentY1 = document.getElementById("myLine").getAttribute("y1");
+        var distance = currentY2-currentY1;
+        var pixelsBehind = 5;
+
+        //Posisjon 35 => y2 tegner seg nedover.
+        if (pos > 34 && pos < 61){
+        document.getElementById("myLine").setAttribute("y2", total+"%");
+        }
+        //posisjon 45 => y1 følger etter y2.
+        if (pos > 44 && pos < 50){
+            document.getElementById("myLine").setAttribute("y1", currentY2-pixelsBehind);
+        }
+        //posisjon 60 => y2 stoppe.
+        if(pos > 49 && pos < 61){
+            
+           if(pos >= 52 && pos < 54){
+               pixelsBehind = 4;
+           }
+           if(pos >= 54 && pos < 56){
+               pixelsBehind = 3;
+           }
+           if(pos >= 56 && pos < 58){
+               pixelsBehind = 2;
+           }
+           if(pos >= 58 && pos < 60){
+               pixelsBehind = 1;
+           }
+           if (pos >= 60){
+               pixelsBehind = 0;
+           }
+
+            document.getElementById("myLine").setAttribute("y1", currentY2-pixelsBehind);
+        }
+        
+        //Y1 fortsetter til den er på samme posisjon som y2.
+        
+       
+        if(pos>halfDrawBoard){
+        console.log("Current y1: " + currentY1);
+        document.getElementById("myLine").setAttribute("stroke:rbg", "0,255,0");
+        }}
+    
+    
+    </script>
+</body>
+</html>
