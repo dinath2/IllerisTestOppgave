@@ -31,28 +31,28 @@
                          function getVerticalScrollPercentage(elm){
                              var p = elm.parentNode,
                              pos = (elm.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight ) * 100
-                             return pos
+                             return parseInt(pos);
                          }
 
                          
     function drawLine(pos) {
         var amountIncrements = pos-min;
         var total = increment * amountIncrements;
-        var currentY2 = document.getElementById("myLine").getAttribute("y2");
+        var currentY2 = parseFloat(document.getElementById("myLine").getAttribute("y2"));
         var currentY1 = document.getElementById("myLine").getAttribute("y1");
         var distance = currentY2-currentY1;
         var pixelsBehind = 5;
         document.getElementById("myLine").setAttribute("y1", "0"+"%");
-        console.log("CY2: "+currentY2 + " CY2-pixelBeh: "+ (currentY2-pixelsBehind))
+        console.log("CY2: "+currentY2 + " pixelBeh: "+ (pixelsBehind))
 
         //Posisjon 35 => y2 tegner seg nedover.
         if (pos > 34 && pos < 61){
         document.getElementById("myLine").setAttribute("y2", total+"%");
         }
         //posisjon 45 => y1 følger etter y2.
-        if (pos > 44 && pos < 50){
+        if (pos > 35 && pos < 50){
             console.log("Move y1")
-            document.getElementById("myLine").setAttribute("y1", (currentY2-pixelsBehind)+"%");
+            document.getElementById("myLine").setAttribute("y1", (currentY2-pixelsBehind+"%"));
         }
         //posisjon 60 => y2 stoppe.
         if(pos > 49 && pos < 61){
