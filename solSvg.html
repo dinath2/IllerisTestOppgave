@@ -47,8 +47,14 @@
                     y1="0%" 
                     x2="50%" 
                     y2="10%"
-                    style="stroke:rgb(255,0,0);stroke-width:10"
-            />    
+                    style="stroke:rgb(158, 158, 158);stroke-width:10"
+                    />    
+                    <rect id="followBox" 
+                    width="3%" 
+                    height="3%" 
+                    x="48.5%"
+                    style="stroke:rgb(71, 57, 133);stroke-width:0.1%"
+                    />    
         </svg>
     </div>
 
@@ -88,7 +94,9 @@
     <script>
         let animDiv = document.getElementById('myDiv');
         const line = document.getElementById("myLine");
+        const box = document.getElementById("followBox");
         const info = document.getElementById("info");
+        var boxLinearY = 0;
         var linearY1 = 0;
         var linearY2 = 0;
 
@@ -115,15 +123,88 @@
                 end = ${endPercentage}<br/>
                 `;
 
+            boxLinearY = 180 - Math.floor(160 * endPercentage);
             linearY1 = 180 - Math.floor(220 * endPercentage);
             linearY2 = 30 - Math.floor(240 * startPercentage);
             updateLine();
         }
 
         function updateLine() {
+            box.setAttribute("y", boxLinearY + "%");
             line.setAttribute("y1", linearY1 + "%");
             line.setAttribute("y2", linearY2 + "%");
         }
     </script>
 </body>
 </html>
+
+
+<!-- <div id="myDiv">
+    <svg viewbox="0 0 200 200">
+
+
+        <line id="myLine" 
+                x1="50%" 
+                y1="0%" 
+                x2="50%" 
+                y2="10%"
+                style="stroke:rgb(220,220,220);stroke-width:10"
+        />  
+<line id="dottedLine" 
+                x1="50%" 
+                y1="0%" 
+                x2="50%" 
+                y2="10%"
+               stroke-width:1
+          stroke="white"
+      stroke-dasharray="3 2"
+        />  
+<rect
+id="truck"
+width="3%"
+height="3%"
+x="48.5%"
+y="0"
+style="fill:rgb(0,0,255);
+stroke-width:1;stroke:rgb(0,0,0)"/>  
+    </svg>
+</div>    
+<script>
+    let animDiv = document.getElementById('myDiv');
+    const line = document.getElementById("myLine");
+     const lineDotted = document.getElementById("dottedLine");
+    const truck = document.getElementById("truck");
+    var linearY1 = 0;
+    var linearY2 = 0;
+
+    var min = 10;
+    var max = 60;
+    var lineStart = 40;
+    var halfDrawBoard = 40;
+    var total = 50;
+    var distance = 10;
+    var increment = 2;
+    var lineY2 = 0;
+    var test = 5;
+    document.onscroll = function() {
+    
+        let rect = animDiv.getBoundingClientRect();
+        let startPercentage = rect.top / window.innerHeight;
+        let endPercentage = rect.bottom / window.innerHeight;
+
+         linearY1 = 180 - Math.floor(220 * endPercentage);
+         linearY2 = 30 - Math.floor(240 * startPercentage);
+         linearTruck = 180 - Math.floor(160*endPercentage);
+        updateLine();
+    }
+
+    function updateLine() {
+        lineDotted.setAttribute("y1", linearY1 + "%");
+        lineDotted.setAttribute("y2", linearY2 + "%");
+        truck.setAttribute("y", linearTruck +"%");
+        line.setAttribute("y1", linearY1 + "%");
+        line.setAttribute("y2", linearY2 + "%");
+    }
+
+  
+</script> -->
